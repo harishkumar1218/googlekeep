@@ -29,7 +29,7 @@ const Note = ({ note }) => {
         console.log(localStorage.getItem("user"));
         try {
             
-            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${note._id}/archive`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/archive`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
