@@ -45,7 +45,7 @@ const TrashNote = ({ trashNote }) => {
     const deleteNote = async (trashNote) => {
         const updatedNotes = deletedNotes.filter(data => data._id !== trashNote._id);
         try {
-            await axios.delete(`https://googlekeep-fynx.onrender.com:5000/api/notes/${trashNote._id}`,{
+            await axios.delete(`https://googlekeep-fynx.onrender.com/api/notes/${trashNote._id}`,{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -60,7 +60,7 @@ const TrashNote = ({ trashNote }) => {
     const restoreNote = async (trashNote) => {
         const updatedNotes = deletedNotes.filter(data => data._id !== trashNote._id);
         try {
-            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${trashNote._id}/restore`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${trashNote._id}/restore`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
