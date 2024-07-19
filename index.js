@@ -6,8 +6,9 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
+const mongoUrl=process.env.MONGODB_URL
 
-mongoose.connect('mongodb+srv://hari_7618:hari_7618@keep.mfy1kah.mongodb.net/?retryWrites=true&w=majority&appName=Keep', {
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
