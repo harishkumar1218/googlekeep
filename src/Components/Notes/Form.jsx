@@ -86,7 +86,7 @@ const Form = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await axios.post('https://googlekeep-fynx.onrender.com:5000/api/notes', { ...addNote },{
+            const response = await axios.post('https://googlekeep-fynx.onrender.com/api/notes', { ...addNote },{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -94,6 +94,7 @@ const Form = () => {
             console.log(response.data);
             addNote = note;
         } catch (err) {
+            console.log("hii");
             console.error(err);
         }
     };
@@ -111,7 +112,6 @@ const Form = () => {
         containerRef.current.style.minHeight = '30px';
         addNote.backgroundColor = backgroundColor;
         addNote.labels = addNote.label?.split(' ').filter(word => word.length > 0).slice(0, 9);
-        console.log(addNote.labels);
         if (setShowTextField) { handleSubmit(); }
         setAddNote({ ...note, id: uuid() });
         setBackgroundColor("#ffffff")

@@ -58,11 +58,12 @@ const Notes = () => {
 
     useEffect(() => {
         const fetchNotes = async () => {
-            const response = await axios.get('https://googlekeep-fynx.onrender.com:5000/api/notes',{
+            const response = await axios.get('https://googlekeep-fynx.onrender.com/api/notes',{
                 headers: {
-                    'userId': localStorage.getItem("user")
+                    'userId': "110482245243071342315"
                 }
             });
+            console.log(response.data);
             setNotes(response.data);
         };
 
@@ -73,7 +74,7 @@ const Notes = () => {
         const updatedNotes = notes.filter(data => data._id !== note._id);
         try {
             
-            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/archive`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${note._id}/archive`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -90,7 +91,7 @@ const Notes = () => {
     const deleteNote = async(note) => {
         const updatedNotes = notes.filter(data => data._id !== note._id);
         try {
-            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/trash`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${note._id}/trash`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -104,7 +105,7 @@ const Notes = () => {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post(`https://googlekeep-fynx.onrender.com:5000/api/notes/${addNote._id}`, { ...addNote },{
+            const response = await axios.post(`https://googlekeep-fynx.onrender.com/api/notes/${addNote._id}`, { ...addNote },{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }

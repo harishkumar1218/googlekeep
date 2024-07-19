@@ -29,7 +29,7 @@ const Note = ({ note }) => {
         console.log(localStorage.getItem("user"));
         try {
             
-            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/archive`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${note._id}/archive`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -45,7 +45,7 @@ const Note = ({ note }) => {
     const deleteNote = async (note) => {
         const updatedNotes = notes.filter(data => data._id !== note._id);
         try {
-            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/trash`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${note._id}/trash`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
