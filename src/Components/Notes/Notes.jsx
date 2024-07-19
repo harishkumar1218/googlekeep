@@ -58,7 +58,7 @@ const Notes = () => {
 
     useEffect(() => {
         const fetchNotes = async () => {
-            const response = await axios.get('/api/notes',{
+            const response = await axios.get('https://googlekeep-fynx.onrender.com:5000/api/notes',{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -69,22 +69,42 @@ const Notes = () => {
         fetchNotes();
     }, []);
 
-    const archiveNote = (note) => {
-        const updatedNotes = notes.filter(data => data.id !== note.id);
+    const archiveNote =async (note) => {
+        const updatedNotes = notes.filter(data => data._id !== note._id);
+        try {
+            
+            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/archive`,{},{
+                headers: {
+                    'userId': localStorage.getItem("user")
+                }
+            });
+        } catch (err) {
+            
+            console.error(err);
+        }
         setNotes(updatedNotes);
         setArchivedNotes(prevArr => [...prevArr, note]);
 
     }
 
-    const deleteNote = (note) => {
-        const updatedNotes = notes.filter(data => data.id !== note.id);
+    const deleteNote = async(note) => {
+        const updatedNotes = notes.filter(data => data._id !== note._id);
+        try {
+            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${note._id}/trash`,{},{
+                headers: {
+                    'userId': localStorage.getItem("user")
+                }
+            });
+        } catch (err) {
+            console.error(err);
+        }
         setNotes(updatedNotes);
         setDeletedNotes(prevArr => [...prevArr, note]);
     }
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post(`https://googlekeep-fynx.onrender.com/api/notes/${addNote._id}`, { ...addNote },{
+            const response = await axios.post(`https://googlekeep-fynx.onrender.com:5000/api/notes/${addNote._id}`, { ...addNote },{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }

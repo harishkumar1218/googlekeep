@@ -86,7 +86,7 @@ const Form = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await axios.post('https://googlekeep-fynx.onrender.com/api/notes', { ...addNote },{
+            const response = await axios.post('https://googlekeep-fynx.onrender.com:500/api/notes', { ...addNote },{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }

@@ -27,7 +27,7 @@ const TrashNotes = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('https://googlekeep-fynx.onrender.com/api/notes/trash',{
+                const response = await axios.get('https://googlekeep-fynx.onrender.com:5000/api/notes/trash',{
                     headers: {
                         'userId': localStorage.getItem("user")
                     }
@@ -54,7 +54,7 @@ const TrashNotes = () => {
     const deleteNote =  () => {
         deletedNotes.map(async(trashNote)=>{
             try {
-                await axios.delete(`https://googlekeep-fynx.onrender.com/api/notes/${trashNote._id}`,{
+                await axios.delete(`https://googlekeep-fynx.onrender.com:5000/api/notes/${trashNote._id}`,{
                     headers: {
                         'userId': localStorage.getItem("user")
                     }

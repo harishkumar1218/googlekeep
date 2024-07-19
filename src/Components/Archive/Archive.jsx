@@ -24,7 +24,7 @@ const Archive = ({ archiveNote }) => {
 
     const unarchiveNote =async (archiveNote) => {
         try {
-            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${archiveNote._id}/unarchive`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${archiveNote._id}/unarchive`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }
@@ -40,7 +40,7 @@ const Archive = ({ archiveNote }) => {
     const deleteNote =async (archiveNote) => {
         const updatedNotes = archivedNotes.filter(data => data._id !== archiveNote._id);
         try {
-            await axios.put(`https://googlekeep-fynx.onrender.com/api/notes/${archiveNote._id}/trash`,{},{
+            await axios.put(`https://googlekeep-fynx.onrender.com:5000/api/notes/${archiveNote._id}/trash`,{},{
                 headers: {
                     'userId': localStorage.getItem("user")
                 }

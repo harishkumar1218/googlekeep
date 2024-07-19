@@ -18,7 +18,7 @@ const Archives = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('https://googlekeep-fynx.onrender.com/api/notes/archived',{
+                const response = await axios.get('https://googlekeep-fynx.onrender.com:5000/api/notes/archived',{
                     headers: {
                         'userId': localStorage.getItem("user")
                     }
