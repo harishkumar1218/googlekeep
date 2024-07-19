@@ -1,0 +1,117 @@
+.authBody {
+      background: #ffffff;
+
+ background: -webkit-linear-gradient(to right, rgb(213, 179, 248), rgb(143, 180, 246));
+  
+   
+  background: linear-gradient(to right,  rgb(213, 179, 248), rgb(143, 180, 246));
+    }
+  
+   .containerAuthFluid {
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+  
+   .customAuthCard {
+     border-radius: "20px";
+     min-width: 350px;
+     max-width: 400px;
+     background-color: #000;
+   }
+  
+   .cardAuthBody {
+     color: #fff;
+     padding: 2rem;
+     padding-top: 5px;
+     padding-left: 0px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+   }
+  
+   .fwAuthBold {
+     font-weight: 700;
+   }
+  
+   .textAuthUppercase {
+     text-transform: uppercase;
+   }
+  
+   .text-white-50 {
+     color: rgba(255, 255, 255, 0.5);
+   }
+  
+   .formAuthControl {
+     background-color: transparent;
+     border: 1px solid rgba(255, 255, 255, 0.25);
+     color: #fff;
+     padding: 0.5rem 1rem;
+   }
+  
+   .formAuthControl:focus {
+     border-color: rgba(255, 255, 255, 0.75);
+     box-shadow: none;
+   }
+  
+   .btnAuthOutlineLight {
+     border: 1px solid #fff;
+     color: #fff;
+     background-color: transparent;
+   }
+  
+   .btnAuthOutlineLight:hover {
+     background-color: #fff;
+     color: #000;
+   }
+  
+   .btnAuthLink {
+     border: none;
+     background: none;
+     color: #fff;
+     padding: 0;
+     margin: 0;
+   }
+  
+   .btnAuthLink:hover {
+     text-decoration: none;
+     color: #ddd;
+   }
+  
+   i.fab {
+     font-size: 1.5rem;
+   }
+
+   .formAuthContainer {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     width: 90%;
+     background-color: transparent;
+   }
+  
+   .formAuthGroup {
+     margin-bottom: 5px;
+     width: 100%;
+     max-width: 350px; 
+   }
+  
+   .formAuthGroup label {
+     display: block;
+   margin-bottom: 5px;
+    color: #fff; 
+   }
+  
+  .formAuthGroup input {
+     width: 100%;
+     padding: 5px;
+     font-size: 1rem; 
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+   }
+  
+ 
